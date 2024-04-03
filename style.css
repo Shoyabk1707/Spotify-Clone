@@ -14,24 +14,26 @@ body {
 
 .left {
     width: 25vw;
-    padding: 10px;
-}
-
-.right {
-    width: 75vw;
+    /* height: 100vh; */
+    padding: 5px;
 }
 
 .home {
-    /* padding: 4px; */
+    padding: 20px;
+    line-height: 25px;
 }
 
 .home ul li {
     display: flex;
     width: 15px;
-    gap: 15px;
+    gap: 20px;
     list-style-type: none;
     padding-top: 14px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    /* gap: 5px; */
+    /* justify-content: center; */
+    /* font-weight: bold; */
 }
 
 .heading{
@@ -60,16 +62,227 @@ body {
 }
 
 .footer{
-    /* width: inherit; */
-    display: flex;
-    font-size: 11px;
-    gap: 13px;
-    padding: 0 24px;
+    width: 95%;
+
+    text-align: start;
     position: absolute;
     bottom: 0;
+}
+
+.footer .links{
+    display: flex;
+    flex-wrap: wrap; 
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    gap: 13px;
+    margin-block: 0px;
+    font-size: 11px;
+    font-weight: 400;
 }
 
 .footer a{
     color: grey;
     text-decoration: none;
+}
+
+
+.en-btn button{
+    box-sizing: border-box;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background-color: transparent;
+    border-radius: 9999px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    transition-duration: 33ms;
+    padding-inline-start: 32px;
+    padding-inline-end: calc(var(--encore-spacing-base,16px) - 1px);
+    border: 1px solid #878787;
+    color: #fdfdfd;
+    min-block-size: 32px;
+    margin: 20px 0;
+}
+
+.svvg{
+    display: flex;
+    position: absolute;
+    left: 10px;
+}
+
+.right{
+    width: 75vw;
+    margin: 16px 0;
+    height: 85vh;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+    padding: 20px; 
+    border-radius: 5px 0px 0px 0px;
+}
+
+.signup-btn{
+    background: transparent;
+    border: none;
+    color: #A7A7A7;
+    font-size: 16px;
+    padding: 8px 32px 8px 8px;
+    font-weight: 550;
+}
+
+.buttons {
+    /* margin: 0 12px; */
+    /* background: #f4f4f4; */
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-btn:hover{
+    transform: scale(1.03);
+    color: white;
+    cursor: pointer;
+}
+
+.login-btn{
+    background-color: white;
+    border-radius: 100px;
+    border: none;
+    font-size: 16px;
+    /* font-size: 1rem; */
+    font-weight: bold;
+    padding: 10px 32px;
+    cursor: pointer;
+ 
+}
+
+.login-btn:hover{
+    transform: scale(1.05);
+}
+
+.spotify-playlist{
+    padding: 16px;
+    height: 70vh;
+    overflow: auto;
+    scrollbar-color: #888888 #333333; 
+}
+
+.spotify-playlist::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.spotify-playlist::-webkit-scrollbar-thumb {
+    background-color: #888888; 
+    border-radius: 10px;
+}
+
+.spotify-playlist::-webkit-scrollbar-track {
+    background-color: #333333; 
+    border-radius: 10px;
+}
+
+.spotify-playlist h2{
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+.card-container{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 8px;
+}
+
+.card{
+   border: 2px;
+   width: 150px;
+   line-height: 18px;
+   padding: 12px;
+   border-radius: 10px;
+   position: relative;
+   cursor: pointer;
+}
+
+.card:hover{
+    background-color: #25252591;
+}
+
+.play{
+    border-radius: 100%;
+    background-color: rgb(85, 207, 85);
+    width: 45px; 
+    height: 45px;
+    box-shadow: 0px 4px 10px #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 125px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.play:hover{
+    background-color: rgb(67, 205, 67);
+}
+
+ .card:hover .play{
+    opacity: 1;
+    cursor: pointer;
+    transform: translateY(-15px);
+}
+
+.card .play img{
+    width: 50%;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.card h2{
+    padding: 7px 0;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+}
+
+.card p{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    word-spacing: 1px;
+    line-height: 19px;
+    color: #858585;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(2, 67, 2);
+    width: 100%;
+    padding: 12px;
 }
