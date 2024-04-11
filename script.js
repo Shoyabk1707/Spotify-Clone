@@ -1,8 +1,9 @@
+let currentSong = new Audio();
 
 async function getSongs(){
     let a = await fetch("http://127.0.0.1:5500/Spotify-clone/songs/");
     let response = await a.text();
-    console.log(response);
+    // console.log(response);
     let div = document.createElement("div");
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
@@ -14,8 +15,16 @@ async function getSongs(){
             songs.push(element.href.split("/songs/")[1]);
         }
     }
-    console.log(songs);    
+    // console.log(songs);    
     return songs;
+}
+const playMusic = (track)=>{
+    // let audio = new Audio("songs/" + track);
+    // audio.play();
+    currentSong.src = "songs/" + track;
+    currentSong.play();
+    console.log(currentSong);
+
 }
 
 async function main(){
@@ -23,6 +32,9 @@ async function main(){
     let songs = await getSongs();
     // console.log(songs);
 
+    
+
+    // Show all the songs in list
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
 
     for (const song of songs) {
@@ -38,9 +50,18 @@ async function main(){
     </li>`;
     }
 
+    // Attach event listener to earch song
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e =>{
+        e.addEventListener("click", element=>{
+            console.log(e.getElementsByTagName("div")[1].innerText);
+            playMusic(e.getElementsByTagName("div")[1].innerText);
+        })
+    }); 
+
     // Play the first song
-    var audio = new Audio(songs[0]);
-    audio.play();
+    // let a = "./songs/Aaj%Bhi.mp3";
+    // var audio = new Audio(a);
+    // audio.play();
 
     audio.addEventListener("loadeddata", ()=>{
         console.log(audio.duration, audio.currentSrc, audio.currentTime);
