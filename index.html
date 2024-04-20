@@ -14,6 +14,9 @@
 
     <div class="container flex bg-black">
         <div class="left ">
+            <div class="close">
+                <img src="cross.svg" alt="">
+            </div>
             <div class="home rounded  m-1 ">
                 <div class="logo"><img class="invert" src="logo.svg" alt=""></div>
                 <ul>
@@ -22,8 +25,9 @@
                 </ul>
             </div>
 
-            <div class="library bg-gey rounded m-1  ">
+            <div class="library rounded m-1  ">
                 <div class="heading">
+
                     <img class="invert" src="playlist.svg" alt="">
                     <h2>Your Library</h2>
                 </div>
@@ -96,13 +100,14 @@
             </div>
 
         </div>
-
-        <div class="right bg-grey rounded">
+        <div class="right rounded">
             <div class="header">
                 <div class="nav">
+                    <img class="hamburger" src="hamburger.svg" alt="">
+
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff"
-                        fill="none">
-                        <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor"
+                    fill="none">
+                    <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff"
@@ -116,7 +121,8 @@
                     <button class="login-btn">Log in</button>
                 </div>
             </div>
-
+            <!-- <audio src="./songs/Aaj Bhi.mp3"></audio> -->
+            
             <div class="spotify-playlist">
                 <h2>Spotify Playlists</h2>
                 <div class="card-container">
@@ -151,22 +157,40 @@
                 </div>
 
 
-                <div class="playbar">
+                <div class="playbar ">
                     <div class="seekbar">
                         <div class="circle">
 
                         </div>
                     </div>
-                    <div class="songinfo">
-                    
-                    </div>
+                    <div class="songDetails">
 
-                    <div class="songButtons">
-                        <img class="invert" src="prev.svg" alt="">
-                        <img class="invert" src="play.svg" alt="">
-                        <img class="invert" src="next.svg" alt="">
+                        <div class="song-name">
+                            <img src="./Assets/music.png" alt="">
+                            <div class="songinfo">
+                                <!-- <audio src="./songs/Bol Na Halke Halke .mp3"></audio> -->
+                            </div>
+                        </div>
+                        
+                        <div class="songButtons">
+                            <img id="previous" class="invert" src="prev.svg" alt="">
+                            <img id="play" class="invert" src="play.svg" alt="">
+                            <img id="next" class="invert" src="next.svg" alt="">
+                        </div>
+
+                        <div class="timeVol">
+
+                            <div class="songtime">
+                                00:00 / 00:00
+                        </div>
+                        
+                        <div class="volume">
+                            <img src="volume.svg" alt="">
+                            <div class="range">
+                            <input type="range" name="volume" id="rng">
+                            </div>
+                        </div>
                     </div>
-                    <div class="songtime">
 
                     </div>
                 </div>
