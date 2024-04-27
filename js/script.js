@@ -20,7 +20,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/${folder}`);
+    let a = await fetch(`/${folder}/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -65,7 +65,7 @@ async function getSongs(folder) {
 const playMusic = (track, pause = false) => {
     // let audio = new Audio("songs/" + track);
     // audio.play();
-    currentSong.src = `${currFolder}` + track;
+    currentSong.src = `/${currFolder}/` + track;
     if (!pause) {
         currentSong.play();
         play.src = "./Assets/Svgs/pause.svg";
@@ -77,7 +77,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/songs/`);
+    let a = await fetch(`/songs/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -87,10 +87,11 @@ async function displayAlbums() {
         for (let index = 0; index < array.length; index++) {
             const e = array[index];
             
-        if (e.href.includes("/Spotify-clone/songs/")) {
+        if (e.href.includes("/songs/")) {
             let folder = e.href.split("/").slice(-1)[0];
             // Get the metaData of the folder
-            let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/songs/${folder}/info.json`);
+            let a = await fetch(`/songs/${folder}/info.json`);
+            
             let response = await a.json();
             console.log(response.title);
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
@@ -111,7 +112,7 @@ async function displayAlbums() {
         // console.log(e);
         e.addEventListener("click", async item => {
             // console.log(item.target, item.target.dataset);
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}/`);
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
             playMusic(songs[0]);
 
         });
@@ -120,7 +121,7 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of all songs
-    await getSongs("songs/ncs/");
+    await getSongs(`/songs/Songs`);
     // console.log(songs);
     playMusic(songs[0], true);
 
@@ -230,7 +231,5 @@ async function main() {
 
 
 }
-
-
 
 main();
