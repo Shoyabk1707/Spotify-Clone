@@ -87,7 +87,7 @@ async function displayAlbums() {
         for (let index = 0; index < array.length; index++) {
             const e = array[index];
             
-        if (e.href.includes("/Spotify-clone/songs/")) {
+        if (e.href.includes("/songs/")) {
             let folder = e.href.split("/").slice(-1)[0];
             // Get the metaData of the folder
             let a = await fetch(`/${folder}/info.json`);
