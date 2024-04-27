@@ -20,7 +20,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/${folder}`);
+    let a = await fetch(`https://shoyabk1707.github.io/Spotify-clone/${folder}`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -77,7 +77,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/songs/`);
+    let a = await fetch(`https://shoyabk1707.github.io/Spotify-clone/songs/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -90,7 +90,7 @@ async function displayAlbums() {
         if (e.href.includes("/Spotify-clone/songs/")) {
             let folder = e.href.split("/").slice(-1)[0];
             // Get the metaData of the folder
-            let a = await fetch(`http://127.0.0.1:5500/Spotify-clone/songs/${folder}/info.json`);
+            let a = await fetch(`https://shoyabk1707.github.io/Spotify-clone/songs/${folder}/info.json`);
             let response = await a.json();
             console.log(response.title);
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card">
