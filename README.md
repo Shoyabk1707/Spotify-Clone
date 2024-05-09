@@ -21,7 +21,7 @@ A Spotify clone website that allows users to play songs, create playlists, and e
 
 - **Responsive Design**: The website is designed to adapt to different screen sizes. You can access it from your desktop, laptop, tablet, or mobile device.
 
--** To use it :** [click here](https://spotiphy.freewebhostmost.com)
+- **To use it :** [click here](https://spotiphy.freewebhostmost.com)
 
 ## Contributing
 
